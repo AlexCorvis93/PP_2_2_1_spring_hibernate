@@ -11,9 +11,12 @@ import java.util.List;
 
 @Repository
 public class CarDaoImp implements CarDao{
+    private SessionFactory sessionFactory;
 
     @Autowired
-    private SessionFactory sessionFactory;
+    public CarDaoImp(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public void add(Car car) {

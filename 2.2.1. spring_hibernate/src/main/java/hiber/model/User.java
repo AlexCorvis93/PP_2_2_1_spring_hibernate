@@ -2,7 +2,15 @@ package hiber.model;
 
 import org.hibernate.annotations.Cascade;
 
-import javax.persistence.*;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.Column;
+
 
 @Entity
 @Table(name = "users")
@@ -12,9 +20,11 @@ public class User {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
-   @OneToOne(mappedBy = "user")
+   @OneToOne()
+   @JoinColumn(name = "car_id")
    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
    private Car car;
+
 
    @Column(name = "name")
    private String firstName;

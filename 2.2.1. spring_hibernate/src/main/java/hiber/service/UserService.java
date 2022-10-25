@@ -10,4 +10,6 @@ public interface UserService {
     List<User> listUsers();
 
     void setCar(Car car);
+
+    Car getCar(String name);
 }
