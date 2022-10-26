@@ -31,9 +31,4 @@ public class CarServiceImp implements CarService{
         return carDao.listCars();
     }
 
-    @Transactional
-    @Override
-    public User getOwner(String model, int series) {
-        return carDao.getOwner(model, series);
-    }
 }

@@ -29,20 +29,5 @@ public class CarDaoImp implements CarDao{
         return cars.getResultList();
     }
 
-    @Override
-    public User getOwner(String model, int series) {
-        User user = new User();
-        for (Car car : listCars()) {
-            if (car.getModel().equals(model) && car.getSeries() == series) {
-                long id = car.getId();
-                Query query = sessionFactory.getCurrentSession().createQuery("from User where id = :paramId");
-                query.setParameter("paramId", id);
-                user = (User) query.getSingleResult();
-            }
-        }
-        return user;
-
-    }
-
 
 }

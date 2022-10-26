@@ -14,4 +14,6 @@ public interface UserDao {
 
    void setCar(Car car);
 
+   User getOwner(String model, int series);
+
 }

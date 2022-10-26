@@ -11,6 +11,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.JoinColumn;
 import javax.persistence.Column;
 
+import static org.hibernate.annotations.CascadeType.SAVE_UPDATE;
+
 
 @Entity
 @Table(name = "users")
@@ -22,7 +24,7 @@ public class User {
 
    @OneToOne()
    @JoinColumn(name = "car_id")
-   @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+   @Cascade(SAVE_UPDATE)
    private Car car;
 
 

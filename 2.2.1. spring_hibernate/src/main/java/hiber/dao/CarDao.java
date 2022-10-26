@@ -14,6 +14,5 @@ public interface CarDao {
 
     List<Car> listCars();
 
-    User getOwner(String model, int series);
 
 }

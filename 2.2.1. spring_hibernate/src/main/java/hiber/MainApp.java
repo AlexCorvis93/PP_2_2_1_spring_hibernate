@@ -15,7 +15,6 @@ public class MainApp {
             new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
-      CarService carService = context.getBean(CarService.class);
 
       User user1 = new User("User1", "Lastname1", "user1@mail.ru");
       User user2 = new User("User2", "Lastname2", "user2@mail.ru");
@@ -35,7 +34,7 @@ public class MainApp {
 
 
 
-      User getuser = carService.getOwner("Lada", 1);
+      User getuser = userService.getOwner("Lada", 1);
 
 
       System.out.println(getuser);

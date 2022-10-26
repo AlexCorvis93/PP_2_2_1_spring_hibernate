@@ -11,5 +11,5 @@ public interface CarService {
 
     List<Car> listCars();
 
-    User getOwner(String model, int series);
+
 }
